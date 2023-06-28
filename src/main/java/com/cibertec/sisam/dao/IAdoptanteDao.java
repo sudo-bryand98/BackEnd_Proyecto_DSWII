@@ -1,4 +1,7 @@
 package com.cibertec.sisam.dao;
 
-public interface IAdoptanteDao {
+import com.cibertec.sisam.model.Adoptante;
+import org.springframework.data.repository.CrudRepository;
+
+public interface IAdoptanteDao extends CrudRepository<Adoptante, Long> {
 }
