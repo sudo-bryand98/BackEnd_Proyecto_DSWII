@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
 public class EncargadoRestController {
 
     private IEncargadoService encargadoService;
@@ -22,7 +22,6 @@ public class EncargadoRestController {
 
     @PostMapping("/encargado")
     public ResponseEntity<EncargadoResponseRest> save(
-            //@RequestParam("CodEncargado") Long CodEncargado,
             @RequestParam("Nombre") String Nombre,
             @RequestParam("Apellido") String Apellido,
             @RequestParam("Edad") Long Edad,
@@ -67,7 +66,6 @@ public class EncargadoRestController {
 
     @PutMapping("/encargado/{id}")
     public ResponseEntity<EncargadoResponseRest> update(
-            //@RequestParam("CodEncargado") Long CodEncargado,
             @RequestParam("Nombre") String Nombre,
             @RequestParam("Apellido") String Apellido,
             @RequestParam("Edad") Long Edad,
