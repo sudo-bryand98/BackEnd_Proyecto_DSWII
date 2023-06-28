@@ -4,7 +4,6 @@ import com.cibertec.sisam.dao.IAnimalDao;
 import com.cibertec.sisam.dao.ITipoAnimalDao;
 import com.cibertec.sisam.model.Animal;
 import com.cibertec.sisam.model.TipoAnimal;
-import com.cibertec.sisam.response.AnimalResponse;
 import com.cibertec.sisam.response.AnimalResponseRest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
