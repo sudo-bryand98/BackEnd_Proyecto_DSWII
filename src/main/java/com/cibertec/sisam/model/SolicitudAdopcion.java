@@ -17,9 +17,9 @@ public class SolicitudAdopcion implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idsolicitud;
 
-    @Temporal(value = TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date fechasolicitud;
+//    @Temporal(value = TemporalType.DATE)
+//    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private String fechasolicitud;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})

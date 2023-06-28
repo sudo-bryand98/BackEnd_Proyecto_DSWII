@@ -21,7 +21,7 @@ public class SolicitudAdopcionRestController {
     }
 
     @PostMapping("/solicitudes")
-    public ResponseEntity<SolicitudAdoptanteResponseRest> save(@RequestParam("fechasolicitud") Date fechasolicitud,
+    public ResponseEntity<SolicitudAdoptanteResponseRest> save(@RequestParam("fechasolicitud") String fechasolicitud,
                                                                @RequestParam("observaciones") String observaciones,
                                                                @RequestParam("id") Long id,
                                                                @RequestParam("ida") Long ida,

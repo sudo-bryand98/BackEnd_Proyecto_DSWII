@@ -14,13 +14,13 @@ public class Encargado implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long  CodEncargado;
+    private Long  CodEncargado;
     private String Nombre;
     private String Apellido;
     private Long Edad;
     private String Telefono;
-   private  String Correo;
-    String NroDocumento;
+    private String Correo;
+    private String NroDocumento;
     @ManyToOne(fetch= FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private TipoDoc CodTipoDoc;

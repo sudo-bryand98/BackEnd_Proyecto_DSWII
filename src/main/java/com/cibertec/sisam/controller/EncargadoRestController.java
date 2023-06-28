@@ -22,13 +22,13 @@ public class EncargadoRestController {
 
     @PostMapping("/encargado")
     public ResponseEntity<EncargadoResponseRest> save(
-            @RequestParam("Nombre") String Nombre,
-            @RequestParam("Apellido") String Apellido,
-            @RequestParam("Edad") Long Edad,
-            @RequestParam("Telefono") String Telefono,
-            @RequestParam("Correo") String Correo,
-            @RequestParam("NroDocumento") String NroDocumento,
-            @RequestParam("CodTipoDoc") Long CodTipoDoc) throws IOException{
+            @RequestParam("nombre") String Nombre,
+            @RequestParam("apellido") String Apellido,
+            @RequestParam("edad") Long Edad,
+            @RequestParam("telefono") String Telefono,
+            @RequestParam("correo") String Correo,
+            @RequestParam("nroDocumento") String NroDocumento,
+            @RequestParam("codTipoDoc") Long CodTipoDoc) throws IOException{
         Encargado encargado = new Encargado();
         encargado.setNombre(Nombre);
         encargado.setApellido(Apellido);
@@ -51,9 +51,9 @@ public class EncargadoRestController {
 
     }
 
-    @DeleteMapping("/encargado/{id}")
-    public ResponseEntity<EncargadoResponseRest> deleteById(@PathVariable Long id){
-        ResponseEntity<EncargadoResponseRest> response = encargadoService.deleteById(id);
+    @DeleteMapping("/encargado/{codEncargado}")
+    public ResponseEntity<EncargadoResponseRest> deleteById(@PathVariable Long codEncargado){
+        ResponseEntity<EncargadoResponseRest> response = encargadoService.deleteById(codEncargado);
         return response;
     }
 
@@ -64,16 +64,16 @@ public class EncargadoRestController {
     }
 
 
-    @PutMapping("/encargado/{id}")
+    @PutMapping("/encargado/{codEncargado}")
     public ResponseEntity<EncargadoResponseRest> update(
-            @RequestParam("Nombre") String Nombre,
-            @RequestParam("Apellido") String Apellido,
-            @RequestParam("Edad") Long Edad,
-            @RequestParam("Telefono") String Telefono,
-            @RequestParam("Correo") String Correo,
-            @RequestParam("NroDocumento") String NroDocumento,
-            @RequestParam("CodTipoDoc") Long CodTipoDoc,
-            @PathVariable Long id) throws IOException{
+            @RequestParam("nombre") String Nombre,
+            @RequestParam("apellido") String Apellido,
+            @RequestParam("edad") Long Edad,
+            @RequestParam("telefono") String Telefono,
+            @RequestParam("correo") String Correo,
+            @RequestParam("nroDocumento") String NroDocumento,
+            @RequestParam("codTipoDoc") Long CodTipoDoc,
+            @PathVariable Long codEncargado) throws IOException{
         Encargado encargado = new Encargado();
         encargado.setNombre(Nombre);
         encargado.setApellido(Apellido);
@@ -83,16 +83,8 @@ public class EncargadoRestController {
         encargado.setNroDocumento(NroDocumento);
 
 
-        ResponseEntity<EncargadoResponseRest> response = encargadoService.update(encargado, CodTipoDoc,id);
+        ResponseEntity<EncargadoResponseRest> response = encargadoService.update(encargado, CodTipoDoc,codEncargado);
 
         return response;
     }
-
-
-
-
-
-
-
-
 }
