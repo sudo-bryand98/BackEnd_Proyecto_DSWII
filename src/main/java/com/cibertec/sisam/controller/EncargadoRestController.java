@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
-@CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
+@CrossOrigin(origins ={"http://localhost:4200"})
 public class EncargadoRestController {
 
     private IEncargadoService encargadoService;
@@ -37,7 +37,6 @@ public class EncargadoRestController {
         encargado.setTelefono(Telefono);
         encargado.setCorreo(Correo);
         encargado.setNroDocumento(NroDocumento);
-
 
         ResponseEntity<EncargadoResponseRest> response = encargadoService.save(encargado, CodTipoDoc);
 
